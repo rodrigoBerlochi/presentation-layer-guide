@@ -36,37 +36,46 @@ Use only with objects.
 •	To initialize a variable that later be assigned to an object
 •	Like a parameter for a function that waits an object or to return from a function where an object is expected
 Not a good idea:
-
+```javascript
 if (person != null){
     doSomething();
 }
+```
 
 ###Undefined
 // Good
+```javascript
 if (typeof variable == "undefined") {
     // do something
 }
+```
 
 // Bad: Using undefined literal
+```javascript
 if (variable == undefined) {
     // do something
 }
+```
 
 
 
 ###Operator Spacing
 // Good
+```javascript
 var found = (values[i] === item);       Space before and after it when it has two operands.
-
+```
 
 // Bad: Missing spaces
+```javascript
 var found = (values[i]===item);
+```
 
 ###Parenthesis Spacing
 Not space after the opening paren or before the closing paren.
 
 ###Object Literals
 // Good
+```javascript
 var object = {
       
       key1: value1,
@@ -79,6 +88,7 @@ var object = {
       key3: value3
 
 };
+```
 
 ###Comments
 Use comments frequently.
@@ -88,14 +98,18 @@ Single line:
 	End of a line (to describe the code before it). Use one indentation level between the code and the comment.
 
 Multi line: 
+```javascript
 if (condition){
     //1 empty line
     /*
      * if you made it here,
      * then all security checks passed
      */
+```     
 
 ###Comment Annotations
+
+```javascript
 //TODO: lorem ipsum
 
 /*
@@ -103,27 +117,34 @@ if (condition){
 */
 //REVIEW: How make it better?
 //FIXME: remember, it should be fixed because ...!
+```
 
 ###Variables
 Declare variables before use it.
 Declare at the beginning of the functions.
 Use 1 single var for a group of declarations.
 // Good
+```javascript
 var count = 10,
       name = "Nicholas",  
       found = false,
       empty;
+```
 
 ###Function Declaration
 Declare before use it.
 Use function declaration format, not  function expression (except in methods, function which are object members)
 // Good
+```javascript
 function doSomething(arg1, arg2) {
     return arg1 + arg2;
-}  
+}
+```
 See space before opening brace, after the comma (on arguments) but not before it. Don't use space between the name and opening paren.
-Immediate functions
+
+###Immediate functions
 // Good
+```javascript
 var value = (function() {
     
     // function body
@@ -132,6 +153,7 @@ var value = (function() {
         message: "Hi"
     }
 }());
+```
 Notice the following structure: ( function() {   }() );
 
 ###Naming
@@ -143,12 +165,16 @@ Variables  with constant values should use every letter on uppercase, and words 
 ###Strict Mode
 Use it only into a function, not on global scope. 
 It change the way javascript is proccesed, and sometimes, it can avoid errors.
+```javascript
 function Name() {
     "use strict";
-  
+```
+
 ###Assignment
 // Good
+```javascript
 var flag = (i < count);
+```
 Use parenthesis on the value side, only when it contains a comparison.
 
 ###Equality Operatos
@@ -158,13 +184,16 @@ It can avoid errors caused by type coersion: when JS change the type of some var
 ###Ternary operator
 Use only to assign a value 
 // Good
+```javascript
 var value = condition ? value1 : value2;
+```
 
 ###Statements
 Simple statements ends with ;
 Only 1 statement per line: Bad > count++; a = b;
 
 IF
+```javascript
 if (condition) {
     statements
 } else if (condition) {
@@ -172,40 +201,53 @@ if (condition) {
 } else {
     statements
 }
+```
 Never omit braces even if there's only a single statement. 
 
 FOR
 Use only for arrays:
+```javascript
 for (initialization; condition; update) {
     statements
 }
+```
 
 Use only for objects:
+```javascript
 for (variable in object) {
     statements
 }
+```
+
 Use hasOwnProperty() method into an IF to get only the properties of the instance.
+
+```javascript
 for (prop in object) {
     if (object.hasOwnProperty(prop)) {
         console.log("Property name is " + prop);
         console.log("Property value is " + object[prop]);
     }
 }
+```
 
 While
+```javascript
 while (condition) {
     statements
 }
-
+```
 
 
 Do
+```javascript
 do {
     statements
 } while (condition);
+```
 Notice the ; at the end of DO statement.
 
 Switch
+```javascript
 switch (value) {
     case 1:
              /* falls through */
@@ -218,10 +260,13 @@ switch (value) {
             return true;
 
     default:
-              throw new Error("This shouldn't happen.);
+              throw new Error("This shouldn\'t happen.");
 }
+```
+
 
 Try
+```javascript
 try {
     statements
 } catch (variable) {
@@ -229,6 +274,9 @@ try {
 } finally { 
     statements
 }
+```
+
+
 
 
 
